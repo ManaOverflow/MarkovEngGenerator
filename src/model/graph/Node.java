@@ -2,6 +2,10 @@ package model.graph;
 
 import model.graph.nodetypes.NodeType;
 
+/**
+ * This class implements a node in the graph.
+ * @author ManaOverflow
+ */
 public abstract class Node {
     private final String text;
     private final int id;

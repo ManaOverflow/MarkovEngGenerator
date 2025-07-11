@@ -9,6 +9,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
+/**
+ * This class implements a markov graph and its methods.
+ * @author ManaOverflow
+ */
 public class MarkovGraph {
     private final List<List<Edge>> markovGraph;
     private final List<Node> startingPoints;
@@ -30,6 +34,7 @@ public class MarkovGraph {
         Collector collector = new Collector(lines, name, context);
         return collector.getGraph();
     }
+
     public static MarkovGraph createGraph(Map<String, Node> toNode, Map<String, Map<String, Integer>> connections,
                                           String name, int context) {
         int size = toNode.size();
@@ -60,12 +65,14 @@ public class MarkovGraph {
         return new MarkovGraph(graph, startingNodes, nodes, nameToNode, name, context);
     }
 
+
+
+
     private static double getSum(Map<String, Integer> connected) {
         double sum = 0;
         for (Integer i : connected.values()) sum += i;
         return sum;
     }
-
 
     public String getName() {
         return name;
