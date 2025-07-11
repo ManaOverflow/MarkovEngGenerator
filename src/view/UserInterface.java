@@ -1,7 +1,12 @@
 package view;
 
 import database.GraphData;
-import view.commands.*;
+import view.commands.Command;
+import view.commands.CreateContentCommand;
+import view.commands.HelpCommand;
+import view.commands.InvalidArgumentException;
+import view.commands.NewGraphCommand;
+import view.commands.QuitCommand;
 
 import java.io.IOException;
 import java.io.InputStream;

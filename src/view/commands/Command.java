@@ -3,9 +3,19 @@ package view.commands;
 import database.GraphData;
 import view.UserInterface;
 
+/**
+ * This class is the abstract super class for all usable commands
+ * and specifies the methods for commands.
+ * @author ManaOverflow
+ */
 public abstract class Command {
+    /**
+     * This ERROR message is to be printed when the number of command arguments is incorrect.
+     */
     protected static final String WRONG_NUMBER_OF_ARGUMENTS_MESSAGE = "Error, incorrect number of command arguments.";
-    protected static final String NO_DATABASE_ERROR_MESSAGE = "Error, there is no database to access.";
+    /**
+     * The user interface to act upon.
+     */
     protected final UserInterface userInterface;
     private final String commandName;
 

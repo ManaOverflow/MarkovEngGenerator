@@ -5,6 +5,11 @@ import util.generator.WordGenerator;
 import model.graph.MarkovGraph;
 import view.UserInterface;
 
+/**
+ * This class implements the create content command, usable to generate a text
+ * using the specified graph and with a specified length.
+ * @author ManaOverflow
+ */
 public class CreateContentCommand extends Command {
     private static final String COMMAND_NAME = "CC";
     /**
@@ -35,7 +40,7 @@ public class CreateContentCommand extends Command {
                     new WordGenerator(markovGraph, length, arguments.length == 2 ? null : arguments[2]);
             String output = wordGenerator.generate();
             userInterface.print(output);
-        } else throw new InvalidArgumentException();
+        } else throw new InvalidArgumentException(WRONG_NUMBER_OF_ARGUMENTS_MESSAGE);
     }
 
     @Override

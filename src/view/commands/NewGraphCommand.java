@@ -19,7 +19,9 @@ public class NewGraphCommand extends Command{
 
     @Override
     public void execute(String[] arguments, GraphData database) throws InvalidArgumentException {
-        if (arguments.length != 3) throw new InvalidArgumentException();
+        if (arguments.length != 3) {
+            throw new InvalidArgumentException(WRONG_NUMBER_OF_ARGUMENTS_MESSAGE);
+        }
         List<String> lines = userInterface.readPath(arguments[0]);
         int context;
         try {

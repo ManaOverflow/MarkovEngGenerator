@@ -12,6 +12,11 @@ import java.util.Map;
 import java.util.StringJoiner;
 import java.util.StringTokenizer;
 
+/**
+ * The collector collects the nodes (strings) for the graph and creates connections between the nodes
+ * based on the given context scale. Context meaning words per node.
+ * @author ManaOverflow
+ */
 public class Collector {
     private static final String TOKENIZER_DELIMITER = " ";
     private final List<String> lines;
@@ -25,6 +30,12 @@ public class Collector {
     private StringTokenizer tokenizer;
     private String currentToken;
 
+    /**
+     * Constructs a new Collector with the lines for the graph, the name and the context specified by the user.
+     * @param lines     the lines to use for the graph.
+     * @param name      the name for the graph.
+     * @param context   the context value for the graph.
+     */
     public Collector(List<String> lines, String name, int context) {
         this.lines = lines;
         this.name = name;

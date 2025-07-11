@@ -3,8 +3,6 @@ package view.commands;
 /**
  * Signals that parsing/retrieving an argument failed, or that the specifications were invalid.
  *
- * @author Programmieren-Team
- * @author uttpa
  */
 public class InvalidArgumentException extends Exception {
     private static final String MESSAGE = "Error, invalid command.";

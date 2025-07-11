@@ -16,6 +16,9 @@ public class HelpCommand extends Command {
 
     @Override
     public void execute(String[] arguments, GraphData database) throws InvalidArgumentException {
+        if (arguments.length != 0) {
+            throw new InvalidArgumentException(WRONG_NUMBER_OF_ARGUMENTS_MESSAGE);
+        }
         userInterface.printHelpData();
     }
 

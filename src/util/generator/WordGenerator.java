@@ -21,10 +21,10 @@ public class WordGenerator {
         int current = markovGraph.getStartIndex(start);
         stringBuilder.append(markovGraph.getString(current)).append(" ");
         int context = markovGraph.getContext();
-        for (int i = 1; i < length; i++) {
+        for (int i = 1; i < length/context; i++) {
             current = markovGraph.getMatching(current, random.nextDouble());
             stringBuilder.append(markovGraph.getString(current));
-            if ((i*context)%10 == 0) stringBuilder.append(System.lineSeparator());
+            if (i % 10 == 0) stringBuilder.append(System.lineSeparator());
             else stringBuilder.append(" ");
         }
         return stringBuilder.toString();
