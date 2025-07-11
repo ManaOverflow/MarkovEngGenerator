@@ -1,0 +1,26 @@
+package view.commands;
+
+import database.GraphData;
+import view.UserInterface;
+
+public class HelpCommand extends Command {
+    private static final String COMMAND_NAME = "help";
+    /**
+     * Constructs a new command with a given command name and the user interface to act upon.
+     *
+     * @param userInterface the user interface to act upon.
+     */
+    public HelpCommand(UserInterface userInterface) {
+        super(COMMAND_NAME, userInterface);
+    }
+
+    @Override
+    public void execute(String[] arguments, GraphData database) throws InvalidArgumentException {
+        userInterface.printHelpData();
+    }
+
+    @Override
+    public void printCommandGuide() {
+        userInterface.print("Enter [help] for the command guides.");
+    }
+}
