@@ -24,7 +24,7 @@ public class WordGenerator {
         for (int i = 1; i < length/context; i++) {
             current = markovGraph.getMatching(current, random.nextDouble());
             stringBuilder.append(markovGraph.getString(current));
-            if (i % 10 == 0) stringBuilder.append(System.lineSeparator());
+            if (i % (10-context) == 0) stringBuilder.append(System.lineSeparator());
             else stringBuilder.append(" ");
         }
         return stringBuilder.toString();
