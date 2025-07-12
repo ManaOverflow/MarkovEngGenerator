@@ -13,7 +13,7 @@ import view.UserInterface;
 public class CreateContentCommand extends Command {
     private static final String COMMAND_NAME = "CC";
     /**
-     * Constructs a new command with a given command name and the user interface to act upon.
+     * Constructs a new command with a given command name, and the user interface to act upon.
      *
      * @param userInterface the user interface to act upon.
      */
@@ -25,7 +25,7 @@ public class CreateContentCommand extends Command {
     public void execute(String[] arguments, GraphData database) throws InvalidArgumentException {
         if (arguments.length == 2 || arguments.length == 3) {
             MarkovGraph markovGraph = database.getGraph(arguments[0]);
-            if (markovGraph == null) throw new InvalidArgumentException();
+            if (markovGraph == null) throw new InvalidArgumentException("Error, graph does not exist.");
             int length;
             try {
                 length = Integer.parseInt(arguments[1]);

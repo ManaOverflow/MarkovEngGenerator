@@ -20,9 +20,19 @@ public class MarkovGraph {
     private final Map<String, Node> nameToNode;
     private final String name;
     private final int context;
-    protected MarkovGraph(ArrayList<List<Edge>> markovGraph, List<Node> startingPoints, List<Node> nodes,
+
+    /**
+     * Constructs a new Markov Graph with the given parameters.
+     * @param adjacencyList     the node connections
+     * @param startingPoints    the possible starting nodes
+     * @param nodes             all the nodes, sorted by ID
+     * @param nameToNode        a map from the content to the node
+     * @param name              the name of the graph
+     * @param context           the context of the graph
+     */
+    protected MarkovGraph(ArrayList<List<Edge>> adjacencyList, List<Node> startingPoints, List<Node> nodes,
                           Map<String, Node> nameToNode, String name, int context) {
-        this.markovGraph = markovGraph;
+        this.markovGraph = adjacencyList;
         this.startingPoints = startingPoints;
         this.nodes = nodes;
         this.nameToNode = nameToNode;

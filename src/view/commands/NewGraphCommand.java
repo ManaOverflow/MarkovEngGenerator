@@ -6,6 +6,11 @@ import view.UserInterface;
 
 import java.util.List;
 
+/**
+ * This command provides access to create a new graph based on the
+ * path, name and context.
+ * @author ManaOverflow
+ */
 public class NewGraphCommand extends Command{
     private static final String COMMAND_NAME = "NewGraph";
     /**

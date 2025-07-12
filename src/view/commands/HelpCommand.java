@@ -3,6 +3,11 @@ package view.commands;
 import database.GraphData;
 import view.UserInterface;
 
+/**
+ * This command implements a command to help the user by printing
+ * short guides for each available command.
+ * @author ManaOverflow
+ */
 public class HelpCommand extends Command {
     private static final String COMMAND_NAME = "help";
     /**
