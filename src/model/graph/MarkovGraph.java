@@ -40,6 +40,13 @@ public class MarkovGraph {
         this.context = context;
     }
 
+    /**
+     * Creates a new instance of Markov Graph by using a collector.
+     * @param lines     the lines to use for the graph.
+     * @param name      the name of the graph.
+     * @param context   the context of the graph.
+     * @return          the created graph instance.
+     */
     public static MarkovGraph getMarkovGraph (List<String> lines, String name, int context) {
         Collector collector = new Collector(lines, name, context);
         return collector.getGraph();

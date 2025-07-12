@@ -20,7 +20,7 @@ public final class Starter {
             System.out.print("Error, invalid command line arguments.");
         } else {
             UserInterface userInterface = new UserInterface(System.in, System.out);
-            userInterface.run();
+            userInterface.handleInput();
         }
     }
 }

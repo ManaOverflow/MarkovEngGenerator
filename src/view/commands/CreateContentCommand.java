@@ -12,6 +12,12 @@ import view.UserInterface;
  */
 public class CreateContentCommand extends Command {
     private static final String COMMAND_NAME = "CC";
+    private static final String COMMAND_GUIDE_TEXT = "Create Content Command: Creates text." + System.lineSeparator()
+            + "CC [Graph name] [Text length] [*optional* Start word]" + System.lineSeparator()
+            + "The start word needs to start a sentence in the text used to generate the graph.";
+    private static final String ERROR_GRAPH_DOES_NOT_EXIST = "Error, graph does not exist.";
+    private static final String TOO_MANY_WORDS_ERROR_MESSAGE = "Input size is too high, capped at 100,000,000.";
+
     /**
      * Constructs a new command with a given command name, and the user interface to act upon.
      *
@@ -25,7 +31,7 @@ public class CreateContentCommand extends Command {
     public void execute(String[] arguments, GraphData database) throws InvalidArgumentException {
         if (arguments.length == 2 || arguments.length == 3) {
             MarkovGraph markovGraph = database.getGraph(arguments[0]);
-            if (markovGraph == null) throw new InvalidArgumentException("Error, graph does not exist.");
+            if (markovGraph == null) throw new InvalidArgumentException(ERROR_GRAPH_DOES_NOT_EXIST);
             int length;
             try {
                 length = Integer.parseInt(arguments[1]);
@@ -33,7 +39,7 @@ public class CreateContentCommand extends Command {
                 throw new InvalidArgumentException();
             }
             if (length > 100000000) {
-                userInterface.print("Input size is too high, capped at 100,000,000.");
+                userInterface.print(TOO_MANY_WORDS_ERROR_MESSAGE);
                 length = 100000000;
             }
             WordGenerator wordGenerator =
@@ -45,8 +51,6 @@ public class CreateContentCommand extends Command {
 
     @Override
     public void printCommandGuide() {
-        userInterface.print("Create Content Command: Creates text." + System.lineSeparator()
-                + "CC [Graph name] [Text length] [*optional* Start word]" + System.lineSeparator()
-                + "The start word needs to start a sentence in the text used to generate the graph.");
+        userInterface.print(COMMAND_GUIDE_TEXT);
     }
 }
