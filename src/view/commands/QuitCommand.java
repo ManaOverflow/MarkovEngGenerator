@@ -1,6 +1,6 @@
 package view.commands;
 
-import database.GraphData;
+import graphdata.GraphData;
 import view.UserInterface;
 
 /**

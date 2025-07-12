@@ -1,6 +1,6 @@
 package view;
 
-import database.GraphData;
+import graphdata.GraphData;
 import view.commands.Command;
 import view.commands.CreateContentCommand;
 import view.commands.HelpCommand;

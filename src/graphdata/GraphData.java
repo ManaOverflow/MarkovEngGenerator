@@ -1,4 +1,4 @@
-package database;
+package graphdata;
 
 import model.graph.MarkovGraph;
 

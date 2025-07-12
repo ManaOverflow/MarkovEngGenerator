@@ -1,6 +1,6 @@
 package view.commands;
 
-import database.GraphData;
+import graphdata.GraphData;
 import util.generator.WordGenerator;
 import model.graph.MarkovGraph;
 import view.UserInterface;
