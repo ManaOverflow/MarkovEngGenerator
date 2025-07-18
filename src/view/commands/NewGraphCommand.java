@@ -41,6 +41,6 @@ public class NewGraphCommand extends Command{
     @Override
     public void printCommandGuide() {
         userInterface.print("The New Graph Command can be used to create a new graph for the database."
-                + System.lineSeparator() + "NewGraph [txt file path] [name]");
+                + System.lineSeparator() + "NewGraph [txt file path] [name] [context 1<= x <=5]");
     }
 }
