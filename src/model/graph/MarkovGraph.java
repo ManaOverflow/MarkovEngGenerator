@@ -30,7 +30,7 @@ public class MarkovGraph {
      * @param name              the name of the graph
      * @param context           the context of the graph
      */
-    protected MarkovGraph(ArrayList<List<Edge>> adjacencyList, List<Node> startingPoints, List<Node> nodes,
+    protected MarkovGraph(List<List<Edge>> adjacencyList, List<Node> startingPoints, List<Node> nodes,
                           Map<String, Node> nameToNode, String name, int context) {
         this.markovGraph = adjacencyList;
         this.startingPoints = startingPoints;
